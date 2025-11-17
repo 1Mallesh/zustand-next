@@ -37,7 +37,9 @@ export const useTicTacToeStore = create<TicTacToeStore>((set, get) => ({
       [2, 4, 6],
     ];
 
-    let gameWinner = null;
+    // ✅ Fix: Correctly typed winner variable
+    let gameWinner: Player | "Draw" | null = null;
+
     winPatterns.forEach(([a, b, c]) => {
       if (
         newBoard[a] &&
