@@ -12,6 +12,7 @@ export default function About() {
               subtitle={banner.subtitle}
               description={banner.description}
               show={banner.show}
+                align="left"
             />
     </div>
   )

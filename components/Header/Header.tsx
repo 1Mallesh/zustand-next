@@ -10,7 +10,7 @@ export default function Header() {
   const [open, setOpen] = useState(false);
 
   const links = [
-    { name: "Home", path: "/" },
+    { name: "about", path: "/about" },
     { name: "Users", path: "/users" },
     { name: "tic-tac-toe", path: "/tic-tac-toe" },
   ];
