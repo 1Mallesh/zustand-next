@@ -6,7 +6,6 @@ export default function About() {
   const { banner } = about;
   return (
     <div>
-      <h1 className='text-center'>about</h1>
         <Banner
               title={banner.title}
               subtitle={banner.subtitle}
