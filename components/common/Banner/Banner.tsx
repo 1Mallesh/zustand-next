@@ -1,12 +1,8 @@
 "use client";
 
-interface BannerProps {
-  title?: string;
-  subtitle?: string;
-  description?: string;
-  show?: boolean;
-  align?: "center" | "left"; // NEW
-}
+import { BannerProps } from "@/types";
+
+
 
 export default function Banner({
   title,
