@@ -22,7 +22,6 @@ export const useCartStore = create<CartStore>((set, get) => ({
   addToCart: (product) =>
     set((state) => {
       const exists = state.cart.find((item) => item.id === product.id);
-
       if (exists) {
         return {
           cart: state.cart.map((item) =>
@@ -32,13 +31,16 @@ export const useCartStore = create<CartStore>((set, get) => ({
           ),
         };
       }
-
       return { cart: [...state.cart, { ...product, qty: 1 }] };
     }),
 
   removeFromCart: (id) =>
     set((state) => ({
-      cart: state.cart.filter((item) => item.id !== id),
+      cart: state.cart
+        .map((item) =>
+          item.id === id ? { ...item, qty: item.qty - 1 } : item
+        )
+        .filter((item) => item.qty > 0), // remove completely if qty is 0
     })),
 
   totalItems: () => get().cart.reduce((sum, item) => sum + item.qty, 0),

@@ -3,7 +3,7 @@
 import { useCartStore } from "@/store/cart-store";
 
 export default function CartPage() {
-  const { cart, removeFromCart } = useCartStore();
+  const { cart, removeFromCart, addToCart } = useCartStore();
 
   return (
     <div className="max-w-[1400px] mx-auto px-5 py-10">
@@ -23,12 +23,20 @@ export default function CartPage() {
               <p className="font-bold text-blue-600">${item.price}</p>
             </div>
 
-            <button
-              onClick={() => removeFromCart(item.id)}
-              className="text-red-600 hover:underline"
-            >
-              Remove
-            </button>
+            <div className="flex gap-2">
+              <button
+                onClick={() => removeFromCart(item.id)}
+                className="bg-red-600 text-white px-3 py-1 rounded hover:bg-red-700"
+              >
+                -
+              </button>
+              <button
+                onClick={() => addToCart(item)}
+                className="bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700"
+              >
+                +
+              </button>
+            </div>
           </div>
         ))}
       </div>
