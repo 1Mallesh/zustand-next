@@ -23,6 +23,7 @@ export default function Header() {
     { name: "Users", path: "/users" },
     { name: "tic-tac-toe", path: "/tic-tac-toe" },
     { name: "service", path: "/service" },
+    { name: "payment", path: "/payment" },
   ];
 
   // Search index for fuzzy/OCR-like search
